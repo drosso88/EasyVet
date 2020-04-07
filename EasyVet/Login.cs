@@ -16,5 +16,12 @@ namespace EasyVet
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Rocio: tester para comprobar estética mientras diseño
+            VentanaPpal ventana = new VentanaPpal();
+            ventana.Show();
+        }
     }
 }
