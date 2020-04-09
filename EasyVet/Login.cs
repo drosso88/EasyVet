@@ -23,5 +23,10 @@ namespace EasyVet
             VentanaPpal ventana = new VentanaPpal();
             ventana.Show();
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
