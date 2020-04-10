@@ -55,8 +55,8 @@ namespace EasyVet
         private void Profil_Click(object sender, EventArgs e)
         {
             //Rocio: tester para comprobar estética mientras diseño
-            perfilVet ventana = new perfilVet();
-            ventana.Show();
+           // perfilVet ventana = new perfilVet();
+           // ventana.Show();
         }
     }
 }

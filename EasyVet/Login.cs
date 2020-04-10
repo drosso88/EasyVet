@@ -12,6 +12,10 @@ namespace EasyVet
 {
     public partial class Login : Form
     {
+
+        Conexion miConexion = new Conexion();
+        DataTable empleados = new DataTable();
+        
         public Login()
         {
             InitializeComponent();
@@ -19,9 +23,19 @@ namespace EasyVet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Rocio: tester para comprobar estética mientras diseño
-            VentanaPpal ventana = new VentanaPpal();
-            ventana.Show();
+            String usuarioIntroducido = textBox1.Text;
+            String contrasenaIntroducida = textBox2.Text;
+            ////////////////////////////
+            empleados = miConexion.comprueboUsuario();
+            String usuarioAlmacenda = empleados.Rows[0]["usuario"].ToString();
+            String contrasenaAlmacenada = empleados.Rows[0]["contrasena"].ToString();
+            Console.WriteLine(contrasenaAlmacenada);
+            if (usuarioIntroducido == usuarioAlmacenda && contrasenaIntroducida == contrasenaAlmacenada)
+            {
+                //Rocio: tester para comprobar estética mientras diseño
+                VentanaPpal ventana = new VentanaPpal();
+                ventana.Show();
+            }
         }
 
         private void Login_Load(object sender, EventArgs e)
