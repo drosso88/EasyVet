@@ -32,6 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VentanaPpal));
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.Agenda = new System.Windows.Forms.TabPage();
+            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -79,15 +87,29 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.Menu = new System.Windows.Forms.TabControl();
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.button2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.label20 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.Tienda = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.checkBox8 = new System.Windows.Forms.CheckBox();
+            this.checkBox9 = new System.Windows.Forms.CheckBox();
+            this.checkBox10 = new System.Windows.Forms.CheckBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.checkBox11 = new System.Windows.Forms.CheckBox();
+            this.checkBox13 = new System.Windows.Forms.CheckBox();
+            this.checkBox14 = new System.Windows.Forms.CheckBox();
+            this.checkBox15 = new System.Windows.Forms.CheckBox();
+            this.checkBox16 = new System.Windows.Forms.CheckBox();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.Profil = new System.Windows.Forms.Button();
             this.Agenda.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabPage1.SuspendLayout();
             this.Mascotas.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -98,7 +120,12 @@
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.Menu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.Tienda.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -116,6 +143,8 @@
             this.imageList1.Images.SetKeyName(8, "Corte-de-Raza-Veterinarios-cinco-Lobitos-Huarte-e1452435706787.jpg");
             this.imageList1.Images.SetKeyName(9, "depositphotos_56249063-stock-illustration-pet-search-circle-background-ico.jpg");
             this.imageList1.Images.SetKeyName(10, "schedule.png");
+            this.imageList1.Images.SetKeyName(11, "gettyimages-131665642-612x612.jpg");
+            this.imageList1.Images.SetKeyName(12, "piggy-bank-money-credit-invoice-saving-bank.jpg");
             // 
             // Agenda
             // 
@@ -131,18 +160,95 @@
             this.Agenda.Location = new System.Drawing.Point(4, 67);
             this.Agenda.Name = "Agenda";
             this.Agenda.Padding = new System.Windows.Forms.Padding(3);
-            this.Agenda.Size = new System.Drawing.Size(1070, 719);
+            this.Agenda.Size = new System.Drawing.Size(1073, 719);
             this.Agenda.TabIndex = 3;
             this.Agenda.Text = "Agenda";
             this.Agenda.UseVisualStyleBackColor = true;
             // 
+            // checkBox4
+            // 
+            this.checkBox4.AutoSize = true;
+            this.checkBox4.Location = new System.Drawing.Point(415, 126);
+            this.checkBox4.Name = "checkBox4";
+            this.checkBox4.Size = new System.Drawing.Size(181, 24);
+            this.checkBox4.TabIndex = 8;
+            this.checkBox4.Text = "Peluquería y estética";
+            this.checkBox4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(415, 68);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(152, 24);
+            this.checkBox3.TabIndex = 7;
+            this.checkBox3.Text = "Antonio Resines";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(228, 68);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(136, 24);
+            this.checkBox2.TabIndex = 6;
+            this.checkBox2.Text = "Myriam Garcia";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(47, 68);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(118, 24);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "Mar Alvarez";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(28, 25);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(198, 25);
+            this.label20.TabIndex = 4;
+            this.label20.Text = "Buscar profesional:";
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 310);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowHeadersWidth = 62;
+            this.dataGridView2.RowTemplate.Height = 28;
+            this.dataGridView2.Size = new System.Drawing.Size(1058, 288);
+            this.dataGridView2.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(392, 640);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(261, 47);
+            this.button2.TabIndex = 2;
+            this.button2.Text = "Añadir Cita";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // monthCalendar1
+            // 
+            this.monthCalendar1.Location = new System.Drawing.Point(769, 25);
+            this.monthCalendar1.Name = "monthCalendar1";
+            this.monthCalendar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.monthCalendar1.TabIndex = 1;
+            // 
             // tabPage3
             // 
-            this.tabPage3.ImageIndex = 9;
+            this.tabPage3.ImageIndex = 8;
             this.tabPage3.Location = new System.Drawing.Point(4, 67);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1070, 719);
+            this.tabPage3.Size = new System.Drawing.Size(1031, 719);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Peluqueria y estética";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -153,7 +259,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 67);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1070, 719);
+            this.tabPage2.Size = new System.Drawing.Size(1031, 719);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Servicios diagnósticos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -161,13 +267,12 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("tabPage1.BackgroundImage")));
             this.tabPage1.Controls.Add(this.Mascotas);
             this.tabPage1.ImageIndex = 2;
             this.tabPage1.Location = new System.Drawing.Point(4, 67);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1070, 719);
+            this.tabPage1.Size = new System.Drawing.Size(1031, 719);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mascotas";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -625,100 +730,268 @@
             // 
             // Menu
             // 
+            this.Menu.Controls.Add(this.Agenda);
             this.Menu.Controls.Add(this.tabPage1);
             this.Menu.Controls.Add(this.tabPage2);
             this.Menu.Controls.Add(this.tabPage3);
-            this.Menu.Controls.Add(this.Agenda);
+            this.Menu.Controls.Add(this.Tienda);
+            this.Menu.Controls.Add(this.tabPage8);
             this.Menu.ImageList = this.imageList1;
             this.Menu.Location = new System.Drawing.Point(-5, -2);
             this.Menu.Name = "Menu";
             this.Menu.SelectedIndex = 0;
-            this.Menu.Size = new System.Drawing.Size(1078, 790);
+            this.Menu.Size = new System.Drawing.Size(1081, 790);
             this.Menu.TabIndex = 0;
             // 
-            // monthCalendar1
+            // Tienda
             // 
-            this.monthCalendar1.Location = new System.Drawing.Point(769, 25);
-            this.monthCalendar1.Name = "monthCalendar1";
-            this.monthCalendar1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.monthCalendar1.TabIndex = 1;
+            this.Tienda.Controls.Add(this.tabControl1);
+            this.Tienda.ImageIndex = 11;
+            this.Tienda.Location = new System.Drawing.Point(4, 67);
+            this.Tienda.Name = "Tienda";
+            this.Tienda.Padding = new System.Windows.Forms.Padding(3);
+            this.Tienda.Size = new System.Drawing.Size(1031, 719);
+            this.Tienda.TabIndex = 4;
+            this.Tienda.Text = "Tienda";
+            this.Tienda.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // tabControl1
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(392, 640);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(261, 47);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Añadir Cita";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.ImageList = this.imageList1;
+            this.tabControl1.Location = new System.Drawing.Point(6, 0);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1064, 719);
+            this.tabControl1.TabIndex = 0;
             // 
-            // dataGridView2
+            // tabPage4
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 310);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersWidth = 62;
-            this.dataGridView2.RowTemplate.Height = 28;
-            this.dataGridView2.Size = new System.Drawing.Size(1058, 288);
-            this.dataGridView2.TabIndex = 3;
+            this.tabPage4.Controls.Add(this.button3);
+            this.tabPage4.Controls.Add(this.checkBox10);
+            this.tabPage4.Controls.Add(this.checkBox9);
+            this.tabPage4.Controls.Add(this.checkBox8);
+            this.tabPage4.Controls.Add(this.checkBox7);
+            this.tabPage4.Controls.Add(this.checkBox6);
+            this.tabPage4.Controls.Add(this.checkBox5);
+            this.tabPage4.Controls.Add(this.dataGridView3);
+            this.tabPage4.ImageIndex = 4;
+            this.tabPage4.Location = new System.Drawing.Point(4, 67);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1056, 648);
+            this.tabPage4.TabIndex = 0;
+            this.tabPage4.Text = "Productos veterinarios";
+            this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // label20
+            // tabPage7
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(28, 25);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(198, 25);
-            this.label20.TabIndex = 4;
-            this.label20.Text = "Buscar profesional:";
+            this.tabPage7.Controls.Add(this.button4);
+            this.tabPage7.Controls.Add(this.checkBox11);
+            this.tabPage7.Controls.Add(this.checkBox13);
+            this.tabPage7.Controls.Add(this.checkBox14);
+            this.tabPage7.Controls.Add(this.checkBox15);
+            this.tabPage7.Controls.Add(this.checkBox16);
+            this.tabPage7.Controls.Add(this.dataGridView4);
+            this.tabPage7.ImageIndex = 3;
+            this.tabPage7.Location = new System.Drawing.Point(4, 67);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(1056, 648);
+            this.tabPage7.TabIndex = 1;
+            this.tabPage7.Text = "Otros";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // dataGridView3
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(47, 68);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(118, 24);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "Mar Alvarez";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(14, 189);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(1039, 460);
+            this.dataGridView3.TabIndex = 0;
             // 
-            // checkBox2
+            // dataGridView4
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(228, 68);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(136, 24);
-            this.checkBox2.TabIndex = 6;
-            this.checkBox2.Text = "Myriam Garcia";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(0, 239);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.RowTemplate.Height = 28;
+            this.dataGridView4.Size = new System.Drawing.Size(1056, 403);
+            this.dataGridView4.TabIndex = 0;
             // 
-            // checkBox3
+            // checkBox5
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(415, 68);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(152, 24);
-            this.checkBox3.TabIndex = 7;
-            this.checkBox3.Text = "Antonio Resines";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox5.AutoSize = true;
+            this.checkBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox5.Location = new System.Drawing.Point(58, 18);
+            this.checkBox5.Name = "checkBox5";
+            this.checkBox5.Size = new System.Drawing.Size(177, 26);
+            this.checkBox5.TabIndex = 2;
+            this.checkBox5.Text = "desparasitación";
+            this.checkBox5.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // checkBox6
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(415, 126);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(181, 24);
-            this.checkBox4.TabIndex = 8;
-            this.checkBox4.Text = "Peluquería y estética";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox6.AutoSize = true;
+            this.checkBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox6.Location = new System.Drawing.Point(289, 18);
+            this.checkBox6.Name = "checkBox6";
+            this.checkBox6.Size = new System.Drawing.Size(134, 26);
+            this.checkBox6.TabIndex = 3;
+            this.checkBox6.Text = "Analgesias";
+            this.checkBox6.UseVisualStyleBackColor = true;
+            // 
+            // checkBox7
+            // 
+            this.checkBox7.AutoSize = true;
+            this.checkBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox7.Location = new System.Drawing.Point(476, 18);
+            this.checkBox7.Name = "checkBox7";
+            this.checkBox7.Size = new System.Drawing.Size(140, 26);
+            this.checkBox7.TabIndex = 4;
+            this.checkBox7.Text = "Antibióticos";
+            this.checkBox7.UseVisualStyleBackColor = true;
+            // 
+            // checkBox8
+            // 
+            this.checkBox8.AutoSize = true;
+            this.checkBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox8.Location = new System.Drawing.Point(658, 18);
+            this.checkBox8.Name = "checkBox8";
+            this.checkBox8.Size = new System.Drawing.Size(118, 26);
+            this.checkBox8.TabIndex = 5;
+            this.checkBox8.Text = "Pomadas";
+            this.checkBox8.UseVisualStyleBackColor = true;
+            // 
+            // checkBox9
+            // 
+            this.checkBox9.AutoSize = true;
+            this.checkBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox9.Location = new System.Drawing.Point(846, 18);
+            this.checkBox9.Name = "checkBox9";
+            this.checkBox9.Size = new System.Drawing.Size(85, 26);
+            this.checkBox9.TabIndex = 6;
+            this.checkBox9.Text = "Otros";
+            this.checkBox9.UseVisualStyleBackColor = true;
+            // 
+            // checkBox10
+            // 
+            this.checkBox10.AutoSize = true;
+            this.checkBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox10.Location = new System.Drawing.Point(58, 85);
+            this.checkBox10.Name = "checkBox10";
+            this.checkBox10.Size = new System.Drawing.Size(231, 26);
+            this.checkBox10.TabIndex = 7;
+            this.checkBox10.Text = "Collares antiparásitos";
+            this.checkBox10.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(375, 130);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(318, 53);
+            this.button3.TabIndex = 8;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(353, 144);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(318, 53);
+            this.button4.TabIndex = 15;
+            this.button4.Text = "Buscar";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // checkBox11
+            // 
+            this.checkBox11.AutoSize = true;
+            this.checkBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox11.Location = new System.Drawing.Point(947, 32);
+            this.checkBox11.Name = "checkBox11";
+            this.checkBox11.Size = new System.Drawing.Size(85, 26);
+            this.checkBox11.TabIndex = 14;
+            this.checkBox11.Text = "Otros";
+            this.checkBox11.UseVisualStyleBackColor = true;
+            // 
+            // checkBox13
+            // 
+            this.checkBox13.AutoSize = true;
+            this.checkBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox13.Location = new System.Drawing.Point(742, 32);
+            this.checkBox13.Name = "checkBox13";
+            this.checkBox13.Size = new System.Drawing.Size(125, 26);
+            this.checkBox13.TabIndex = 12;
+            this.checkBox13.Text = "Golosinas";
+            this.checkBox13.UseVisualStyleBackColor = true;
+            // 
+            // checkBox14
+            // 
+            this.checkBox14.AutoSize = true;
+            this.checkBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox14.Location = new System.Drawing.Point(554, 32);
+            this.checkBox14.Name = "checkBox14";
+            this.checkBox14.Size = new System.Drawing.Size(117, 26);
+            this.checkBox14.TabIndex = 11;
+            this.checkBox14.Text = "Juguetes";
+            this.checkBox14.UseVisualStyleBackColor = true;
+            // 
+            // checkBox15
+            // 
+            this.checkBox15.AutoSize = true;
+            this.checkBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox15.Location = new System.Drawing.Point(211, 32);
+            this.checkBox15.Name = "checkBox15";
+            this.checkBox15.Size = new System.Drawing.Size(286, 26);
+            this.checkBox15.TabIndex = 10;
+            this.checkBox15.Text = "Collares, Correas y arneses";
+            this.checkBox15.UseVisualStyleBackColor = true;
+            // 
+            // checkBox16
+            // 
+            this.checkBox16.AutoSize = true;
+            this.checkBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox16.Location = new System.Drawing.Point(36, 32);
+            this.checkBox16.Name = "checkBox16";
+            this.checkBox16.Size = new System.Drawing.Size(107, 26);
+            this.checkBox16.TabIndex = 9;
+            this.checkBox16.Text = "Piensos";
+            this.checkBox16.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.ImageIndex = 12;
+            this.tabPage8.Location = new System.Drawing.Point(4, 67);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage8.Size = new System.Drawing.Size(1031, 719);
+            this.tabPage8.TabIndex = 5;
+            this.tabPage8.Text = "Facturas";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // Profil
+            // 
+            this.Profil.BackColor = System.Drawing.Color.Transparent;
+            this.Profil.Image = global::EasyVet.Properties.Resources.veterinario;
+            this.Profil.Location = new System.Drawing.Point(1201, -2);
+            this.Profil.Name = "Profil";
+            this.Profil.Size = new System.Drawing.Size(104, 180);
+            this.Profil.TabIndex = 1;
+            this.Profil.Text = "Mi Perfil";
+            this.Profil.UseVisualStyleBackColor = false;
+            this.Profil.Click += new System.EventHandler(this.Profil_Click);
             // 
             // VentanaPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1133, 849);
+            this.ClientSize = new System.Drawing.Size(1304, 983);
+            this.Controls.Add(this.Profil);
             this.Controls.Add(this.Menu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -727,6 +1000,7 @@
             this.Text = "VentanaPpal";
             this.Agenda.ResumeLayout(false);
             this.Agenda.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.Mascotas.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
@@ -740,7 +1014,14 @@
             this.tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.Menu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.Tienda.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -803,5 +1084,26 @@
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.MonthCalendar monthCalendar1;
+        private System.Windows.Forms.TabPage Tienda;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.CheckBox checkBox10;
+        private System.Windows.Forms.CheckBox checkBox9;
+        private System.Windows.Forms.CheckBox checkBox8;
+        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.CheckBox checkBox11;
+        private System.Windows.Forms.CheckBox checkBox13;
+        private System.Windows.Forms.CheckBox checkBox14;
+        private System.Windows.Forms.CheckBox checkBox15;
+        private System.Windows.Forms.CheckBox checkBox16;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Button Profil;
     }
 }
