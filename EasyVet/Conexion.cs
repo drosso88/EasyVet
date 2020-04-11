@@ -16,6 +16,7 @@ namespace EasyVet
         {
             conexion =new MySqlConnection("Server=192.168.182.145; Database=veterinario; Uid=root; Pwd=; port=3306");
         }
+        //metodo para la conexion del login. Hecho por Igor
         public DataTable comprueboUsuario()
         {
             try 
