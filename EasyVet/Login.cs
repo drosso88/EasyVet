@@ -25,9 +25,8 @@ namespace EasyVet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String textoContrasena = textBox2.Text;
-            string myHash = BCrypt.Net.BCrypt.HashPassword(textoContrasena, BCrypt.Net.BCrypt.GenerateSalt());
-            String resultado = miConexion.comprueboUsuario(textBox1.Text, myHash);
+
+            String resultado = miConexion.comprueboUsuario(textBox1.Text, textBox2.Text);
             MessageBox.Show(resultado);
             if (resultado != "error de usuario/contraseña")
             {

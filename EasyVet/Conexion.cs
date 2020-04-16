@@ -14,7 +14,7 @@ namespace EasyVet
     
         public Conexion()
         {
-            conexion =new MySqlConnection("Server=192.168.182.149; Database=veterinario; Uid=root; Pwd=; port=3306");
+            conexion =new MySqlConnection("Server=192.168.182.147; Database=veterinario; Uid=root; Pwd=; port=3306");
         }
         //metodo para la conexion del login. Hecho por Igor
         public String comprueboUsuario(String usuario, String contrasena)
@@ -73,15 +73,10 @@ namespace EasyVet
             try
             {
                 conexion.Open();
-                MySqlCommand consultaId = new MySqlCommand("SELECT id_cliente FROM veterinario.cliente  WHERE email=@email", conexion);
-                Console.WriteLine(consultaId);
-                consultaId.Parameters.AddWithValue("@email", email);
-                consultaId.ToString();
                 MySqlCommand consulta = new MySqlCommand(
                    "SET foreign_key_checks=0;INSERT INTO veterinario.mascota(id_mascota,nombre,raza,fecha_nacimiento,propietario)" +
-                   "VALUES(NULL,@nombre,@raza,@fecha_nacimiento,@propietario)", conexion);
-                consulta.Parameters.AddWithValue("@propietario", consultaId);
-            
+                   "VALUES(NULL,@nombre,@raza,@fecha_nacimiento,(SELECT id_cliente FROM veterinario.cliente  WHERE email=@email))", conexion);
+                consulta.Parameters.AddWithValue("@email", email);
                 consulta.Parameters.AddWithValue("@nombre", nombre);
                 consulta.Parameters.AddWithValue("@raza", raza);
                 consulta.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
