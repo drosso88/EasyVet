@@ -10,8 +10,11 @@ using System.Windows.Forms;
 
 namespace EasyVet
 {
+    
     public partial class VentanaPpal : Form
     {
+        Conexion miConexion = new Conexion();
+       // DataTable mascota = new DataTable();
         public VentanaPpal()
         {
             InitializeComponent();
@@ -57,6 +60,13 @@ namespace EasyVet
             //Rocio: tester para comprobar estética mientras diseño
            // perfilVet ventana = new perfilVet();
            // ventana.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            String resultado = miConexion.insertoCliente(textBox1.Text, textBox2.Text, textBox16.Text, textBox4.Text, textBox3.Text);
+            String resultado1 = miConexion.insertoMascota(textBox7.Text,textBox9.Text, textBox11.Text,textBox3.Text);
+            MessageBox.Show( resultado1);
         }
     }
 }

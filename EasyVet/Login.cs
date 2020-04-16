@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace EasyVet
 {
@@ -15,6 +16,7 @@ namespace EasyVet
 
         Conexion miConexion = new Conexion();
         DataTable empleados = new DataTable();
+       
         
         public Login()
         {
@@ -23,19 +25,17 @@ namespace EasyVet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String usuarioIntroducido = textBox1.Text;
-            String contrasenaIntroducida = textBox2.Text;
-            ////////////////////////////
-            empleados = miConexion.comprueboUsuario();
-            String usuarioAlmacenda = empleados.Rows[0]["usuario"].ToString();
-            String contrasenaAlmacenada = empleados.Rows[0]["contrasena"].ToString();
-            Console.WriteLine(contrasenaAlmacenada);
-            if (usuarioIntroducido == usuarioAlmacenda && contrasenaIntroducida == contrasenaAlmacenada)
+            String textoContrasena = textBox2.Text;
+            string myHash = BCrypt.Net.BCrypt.HashPassword(textoContrasena, BCrypt.Net.BCrypt.GenerateSalt());
+            String resultado = miConexion.comprueboUsuario(textBox1.Text, myHash);
+            MessageBox.Show(resultado);
+            if (resultado != "error de usuario/contraseña")
             {
-                //Rocio: tester para comprobar estética mientras diseño
+                this.Hide();
                 VentanaPpal ventana = new VentanaPpal();
                 ventana.Show();
             }
+            
         }
 
         private void Login_Load(object sender, EventArgs e)

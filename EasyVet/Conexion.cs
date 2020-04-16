@@ -14,28 +14,87 @@ namespace EasyVet
     
         public Conexion()
         {
-            conexion =new MySqlConnection("Server=192.168.182.145; Database=veterinario; Uid=root; Pwd=; port=3306");
+            conexion =new MySqlConnection("Server=192.168.182.149; Database=veterinario; Uid=root; Pwd=; port=3306");
         }
         //metodo para la conexion del login. Hecho por Igor
-        public DataTable comprueboUsuario()
+        public String comprueboUsuario(String usuario, String contrasena)
         {
-            try 
+            try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT dni_trabajador,usuario,contrasena FROM veterinario.empleados", conexion);
+                MySqlCommand consulta = new MySqlCommand("SELECT *FROM veterinario.empleado WHERE usuario= @usuario and contrasena=@contrasena", conexion);
+
+                consulta.Parameters.AddWithValue("@usuario", usuario);
+                consulta.Parameters.AddWithValue("@contrasena", contrasena);
+
                 MySqlDataReader resultado = consulta.ExecuteReader();
-                DataTable empleados = new DataTable();
-                empleados.Load(resultado);
+                if (resultado.Read())
+                {
+                    return resultado.GetString(0);
+                }
+
                 conexion.Close();
-                return empleados;
+                return "error de usuario/contraseña";
             }
-            catch(MySqlException e)
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public String insertoCliente(String nombre, String apellido_1,String apellido_2, String telefono,String email)
+            {
+            try
+            {
+                conexion.Open();
+                
+                MySqlCommand consulta =
+                    new MySqlCommand ("SET foreign_key_checks=0;INSERT INTO veterinario.cliente(id_cliente,nombre,apellido_1,apellido_2,telefono,email,fecha_alta) VALUES" +
+                    "(NULL,@nombre,@apellido_1,@apellido_2,@telefono,@email,NULL);", conexion);
+                consulta.Parameters.AddWithValue("@nombre", nombre);
+                consulta.Parameters.AddWithValue("@apellido_1", apellido_1);
+                consulta.Parameters.AddWithValue("@apellido_2", apellido_2);
+                consulta.Parameters.AddWithValue("@telefono", telefono);
+                consulta.Parameters.AddWithValue("@email", email);
+
+                consulta.ExecuteNonQuery();
+                conexion.Close();
+
+                return "Ha sido insertado cliente y";
+            }
+            catch(Exception e)
             {
                 throw e;
             }
 
+            }
+        public String insertoMascota(String nombre, String raza, String fecha_nacimiento, String email)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consultaId = new MySqlCommand("SELECT id_cliente FROM veterinario.cliente  WHERE email=@email", conexion);
+                Console.WriteLine(consultaId);
+                consultaId.Parameters.AddWithValue("@email", email);
+                consultaId.ToString();
+                MySqlCommand consulta = new MySqlCommand(
+                   "SET foreign_key_checks=0;INSERT INTO veterinario.mascota(id_mascota,nombre,raza,fecha_nacimiento,propietario)" +
+                   "VALUES(NULL,@nombre,@raza,@fecha_nacimiento,@propietario)", conexion);
+                consulta.Parameters.AddWithValue("@propietario", consultaId);
+            
+                consulta.Parameters.AddWithValue("@nombre", nombre);
+                consulta.Parameters.AddWithValue("@raza", raza);
+                consulta.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
+                consulta.ExecuteNonQuery();
 
-
-        }
+                conexion.Close();
+                return "se ha insertado mascota";
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }      
+        
     }
 }
