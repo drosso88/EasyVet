@@ -41,5 +41,11 @@ namespace EasyVet
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Perfil perfil = new Perfil();
+            perfil.Show();
+        }
     }
 }

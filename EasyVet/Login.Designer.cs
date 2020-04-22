@@ -116,8 +116,9 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(478, 71);
             this.button2.TabIndex = 6;
-            this.button2.Text = "Si has olvidado tu contraseña o usuario, pulsa aquí";
+            this.button2.Text = "Si has olvidado tu contraseña o usuario, o deseas modificarla pulsa aquí";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Login
             // 
