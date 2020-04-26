@@ -93,7 +93,36 @@ namespace EasyVet
             {
                 throw e;
             }
-        }      
-        
+        }
+
+        //Rocio 
+        public String insertoUsuario(String nombre, String apellido_1, String apellido_2, String telefono, String email, String ocupacion, String dni,String contrasena)
+        {
+            try
+            {
+                conexion.Open();
+
+                MySqlCommand consulta =
+                    new MySqlCommand("SET foreign_key_checks=0;INSERT INTO veterinario.empleado(empleado_id,nombre,apellido_1,apellido_2,telefono,email,fecha_alta,contrasena,codigo_postal,direccion,dni_trabajador) VALUES" +
+                    "(NULL,@nombre,@apellido_1,@apellido_2,@telefono,@email,NULL);", conexion);
+                consulta.Parameters.AddWithValue("@nombre", nombre);
+                consulta.Parameters.AddWithValue("@apellido_1", apellido_1);
+                consulta.Parameters.AddWithValue("@apellido_2", apellido_2);
+                consulta.Parameters.AddWithValue("@telefono", telefono);
+                consulta.Parameters.AddWithValue("@email", email);
+                consulta.Parameters.AddWithValue("@contrasena", contrasena);
+                consulta.Parameters.AddWithValue("@dni_trabajador", dni);
+
+                consulta.ExecuteNonQuery();
+                conexion.Close();
+
+                return "Ha sido insertado cliente y";
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
     }
 }

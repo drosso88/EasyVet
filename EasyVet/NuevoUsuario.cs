@@ -12,6 +12,7 @@ namespace EasyVet
 {
     public partial class NuevoUsuario : Form
     {
+        Conexion miConexion = new Conexion();
         public NuevoUsuario()
         {
             InitializeComponent();
@@ -19,7 +20,12 @@ namespace EasyVet
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
-
+            String resultado = miConexion.insertoUsuario(nombre.Text, ap1.Text, ap2.Text, cp.Text, direccion.Text,email.Text, telefono.Text, contraseña.Text);
+            MessageBox.Show(resultado);
         }
     }
-}
+
+
+      
+    }
+

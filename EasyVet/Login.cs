@@ -41,16 +41,18 @@ namespace EasyVet
         {
 
         }
-
+        //rocio
         private void button2_Click(object sender, EventArgs e)
         {
             Perfil perfil = new Perfil();
             perfil.Show();
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        //rocio
+        private void
+            button3_Click(object sender, EventArgs e)
         {
-
+            NuevoUsuario nuevo = new NuevoUsuario();
+            nuevo.Show();
         }
     }
 }
