@@ -14,7 +14,10 @@ namespace EasyVet
     
         public Conexion()
         {
-            conexion =new MySqlConnection("Server=192.168.182.147; Database=veterinario; Uid=root; Pwd=; port=3306");
+           
+           conexion =new MySqlConnection("Server=192.168.182.147; Database=veterinario; Uid=root; Pwd=; port=3306");
+
+            
         }
         //metodo para la conexion del login. Hecho por Igor
         public String comprueboUsuario(String usuario, String contrasena)
@@ -41,7 +44,7 @@ namespace EasyVet
                 throw e;
             }
         }
-
+        //metodo para añadir Cliente. Por Igor
         public String insertoCliente(String nombre, String apellido_1,String apellido_2, String telefono,String email)
             {
             try
@@ -68,6 +71,7 @@ namespace EasyVet
             }
 
             }
+        //metodo para añadir Cliente. Por Rocio
         public String insertoMascota(String nombre, String raza, String fecha_nacimiento, String email)
         {
             try

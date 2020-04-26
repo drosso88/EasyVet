@@ -81,6 +81,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevoUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoUsuario.Designer.cs">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Perfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NuevoUsuario.resx">
+      <DependentUpon>NuevoUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Perfil.resx">
       <DependentUpon>Perfil.cs</DependentUpon>

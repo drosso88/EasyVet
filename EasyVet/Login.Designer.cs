@@ -36,6 +36,7 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -43,7 +44,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sylfaen", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Navy;
-            this.label1.Location = new System.Drawing.Point(235, 53);
+            this.label1.Location = new System.Drawing.Point(173, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(581, 87);
             this.label1.TabIndex = 0;
@@ -55,7 +56,7 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Sylfaen", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Navy;
-            this.label2.Location = new System.Drawing.Point(27, 203);
+            this.label2.Location = new System.Drawing.Point(29, 243);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(221, 57);
             this.label2.TabIndex = 1;
@@ -67,7 +68,7 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Sylfaen", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Navy;
-            this.label3.Location = new System.Drawing.Point(12, 397);
+            this.label3.Location = new System.Drawing.Point(12, 466);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(278, 57);
             this.label3.TabIndex = 2;
@@ -78,7 +79,7 @@
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(382, 210);
+            this.textBox1.Location = new System.Drawing.Point(382, 263);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(372, 50);
             this.textBox1.TabIndex = 3;
@@ -87,7 +88,7 @@
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(382, 425);
+            this.textBox2.Location = new System.Drawing.Point(382, 466);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(372, 50);
             this.textBox2.TabIndex = 4;
@@ -97,7 +98,7 @@
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.button1.Font = new System.Drawing.Font("Modern No. 20", 22F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.button1.Location = new System.Drawing.Point(370, 509);
+            this.button1.Location = new System.Drawing.Point(382, 585);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(261, 71);
             this.button1.TabIndex = 5;
@@ -112,13 +113,26 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Modern No. 20", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Maroon;
-            this.button2.Location = new System.Drawing.Point(458, 625);
+            this.button2.Location = new System.Drawing.Point(495, 692);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(478, 71);
             this.button2.TabIndex = 6;
             this.button2.Text = "Si has olvidado tu contraseña o usuario, o deseas modificarla pulsa aquí";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button3.Font = new System.Drawing.Font("Modern No. 20", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.LightSteelBlue;
+            this.button3.Location = new System.Drawing.Point(849, -2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(133, 108);
+            this.button3.TabIndex = 7;
+            this.button3.Text = "Añadir Usuario";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Login
             // 
@@ -128,7 +142,8 @@
             this.BackColor = System.Drawing.Color.SlateGray;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(933, 693);
+            this.ClientSize = new System.Drawing.Size(973, 760);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
@@ -156,6 +171,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
 

@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace EasyVet
 {
-    public partial class Perfil : Form
+    public partial class NuevoUsuario : Form
     {
-        public Perfil()
+        public NuevoUsuario()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Perfil_Load(object sender, EventArgs e)
+        private void NuevoUsuario_Load(object sender, EventArgs e)
         {
 
         }
