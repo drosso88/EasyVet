@@ -67,13 +67,18 @@ namespace EasyVet
         private void button5_Click(object sender, EventArgs e)
         {
             String resultado = miConexion.insertoCliente(textBox1.Text, textBox2.Text, textBox16.Text, textBox4.Text, textBox3.Text);
-            String resultado1 = miConexion.insertoMascota(textBox7.Text,textBox9.Text, textBox11.Text,textBox3.Text);
+            String resultado1 = miConexion.insertoMascota(textBox7.Text,textBox9.Text, comboBox1.Text, textBox11.Text,textBox3.Text);
            // MessageBox.Show( resultado1);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String resultado2 = miConexion.buscoMascotas(textBox12.Text,textBox13.Text,textBox14.Text,);
         }
     }
 }

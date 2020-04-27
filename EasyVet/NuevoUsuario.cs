@@ -20,8 +20,14 @@ namespace EasyVet
 
         private void NuevoUsuario_Load(object sender, EventArgs e)
         {
-           // String resultado = miConexion.insertoUsuario(nombre.Text, ap1.Text, ap2.Text, cp.Text, direccion.Text,email.Text, telefono.Text, contraseña.Text);
-            //MessageBox.Show(resultado);
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            String resultado = miConexion.insertoUsuario(dni.Text, nombre.Text, ap1.Text, textBox8.Text, cargo.Text, direccion.Text, telefono.Text, email.Text, cp.Text, nombre.Text + ap1.Text, contrasena.Text);
+            MessageBox.Show(resultado);
+            this.Hide();
         }
     }
 
