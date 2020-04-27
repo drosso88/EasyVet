@@ -11,13 +11,13 @@ namespace EasyVet
     class Conexion
     {
         public MySqlConnection conexion;
-    
+
         public Conexion()
         {
-           
-           conexion =new MySqlConnection("Server=192.168.182.147; Database=veterinario; Uid=root; Pwd=; port=3306");
 
-            
+            conexion = new MySqlConnection("Server=192.168.182.147; Database=veterinario; Uid=root; Pwd=; port=3306");
+
+
         }
         //metodo para la conexion del login. Hecho por Igor
         public String comprueboUsuario(String usuario, String contrasena)
@@ -45,14 +45,14 @@ namespace EasyVet
             }
         }
         //metodo para añadir Cliente. Por Igor
-        public String insertoCliente(String nombre, String apellido_1,String apellido_2, String telefono,String email)
-            {
+        public String insertoCliente(String nombre, String apellido_1, String apellido_2, String telefono, String email)
+        {
             try
             {
                 conexion.Open();
-                
+
                 MySqlCommand consulta =
-                    new MySqlCommand ("SET foreign_key_checks=0;INSERT INTO veterinario.cliente(id_cliente,nombre,apellido_1,apellido_2,telefono,email,fecha_alta) VALUES" +
+                    new MySqlCommand("SET foreign_key_checks=0;INSERT INTO veterinario.cliente(id_cliente,nombre,apellido_1,apellido_2,telefono,email,fecha_alta) VALUES" +
                     "(NULL,@nombre,@apellido_1,@apellido_2,@telefono,@email,NULL);", conexion);
                 consulta.Parameters.AddWithValue("@nombre", nombre);
                 consulta.Parameters.AddWithValue("@apellido_1", apellido_1);
@@ -65,12 +65,12 @@ namespace EasyVet
 
                 return "Ha sido insertado cliente y";
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 throw e;
             }
 
-            }
+        }
         //metodo para añadir Cliente. Por Rocio
         public String insertoMascota(String nombre, String raza, String fecha_nacimiento, String email)
         {
@@ -96,33 +96,34 @@ namespace EasyVet
         }
 
         //Rocio 
-        public String insertoUsuario(String nombre, String apellido_1, String apellido_2, String telefono, String email, String ocupacion, String dni,String contrasena)
-        {
-            try
-            {
-                conexion.Open();
+        /* public String insertoUsuario(String nombre, String apellido_1, String apellido_2, String telefono, String email, String ocupacion, String dni,String contrasena)
+         {
+             try
+             {
+                 conexion.Open();
 
-                MySqlCommand consulta =
-                    new MySqlCommand("SET foreign_key_checks=0;INSERT INTO veterinario.empleado(empleado_id,nombre,apellido_1,apellido_2,telefono,email,fecha_alta,contrasena,codigo_postal,direccion,dni_trabajador) VALUES" +
-                    "(NULL,@nombre,@apellido_1,@apellido_2,@telefono,@email,NULL);", conexion);
-                consulta.Parameters.AddWithValue("@nombre", nombre);
-                consulta.Parameters.AddWithValue("@apellido_1", apellido_1);
-                consulta.Parameters.AddWithValue("@apellido_2", apellido_2);
-                consulta.Parameters.AddWithValue("@telefono", telefono);
-                consulta.Parameters.AddWithValue("@email", email);
-                consulta.Parameters.AddWithValue("@contrasena", contrasena);
-                consulta.Parameters.AddWithValue("@dni_trabajador", dni);
+                 MySqlCommand consulta =
+                     new MySqlCommand("SET foreign_key_checks=0;INSERT INTO veterinario.empleado(empleado_id,nombre,apellido_1,apellido_2,telefono,email,fecha_alta,contrasena,codigo_postal,direccion,dni_trabajador) VALUES" +
+                     "(NULL,@nombre,@apellido_1,@apellido_2,@telefono,@email,NULL);", conexion);
+                 consulta.Parameters.AddWithValue("@nombre", nombre);
+                 consulta.Parameters.AddWithValue("@apellido_1", apellido_1);
+                 consulta.Parameters.AddWithValue("@apellido_2", apellido_2);
+                 consulta.Parameters.AddWithValue("@telefono", telefono);
+                 consulta.Parameters.AddWithValue("@email", email);
+                 consulta.Parameters.AddWithValue("@contrasena", contrasena);
+                 consulta.Parameters.AddWithValue("@dni_trabajador", dni);
 
-                consulta.ExecuteNonQuery();
-                conexion.Close();
+                 consulta.ExecuteNonQuery();
+                 conexion.Close();
 
-                return "Ha sido insertado cliente y";
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
+                 return "Ha sido insertado cliente y";
+             }
+             catch (Exception e)
+             {
+                 throw e;
+             }*/
 
-        }
+         }
     }
-}
+
+

@@ -236,7 +236,7 @@
             this.telefono.Name = "telefono";
             this.telefono.Size = new System.Drawing.Size(391, 32);
             this.telefono.TabIndex = 29;
-            this.telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            //this.telefono.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label10
             // 
@@ -246,7 +246,7 @@
             this.label10.Size = new System.Drawing.Size(100, 23);
             this.label10.TabIndex = 28;
             this.label10.Text = "Teléfono";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
+           // this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // NuevoUsuario
             // 

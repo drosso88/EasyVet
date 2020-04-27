@@ -68,7 +68,7 @@ namespace EasyVet
         {
             String resultado = miConexion.insertoCliente(textBox1.Text, textBox2.Text, textBox16.Text, textBox4.Text, textBox3.Text);
             String resultado1 = miConexion.insertoMascota(textBox7.Text,textBox9.Text, textBox11.Text,textBox3.Text);
-            MessageBox.Show( resultado1);
+           // MessageBox.Show( resultado1);
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
