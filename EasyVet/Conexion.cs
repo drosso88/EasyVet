@@ -72,15 +72,16 @@ namespace EasyVet
 
         }
         //metodo para añadir Cliente. Por Rocio
-        public String insertoMascota(String nombre, String raza,String sexo, String fecha_nacimiento, String email)
+        public String insertoMascota(String nombre, String especie, String raza,String sexo, String fecha_nacimiento, String email)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand(
-                   "SET foreign_key_checks=0;INSERT INTO veterinario.mascota(mascota_id,nombre,raza,sexo,fecha_nacimiento,propietario)" +
-                   "VALUES(NULL,@nombre, @raza, @sexo, @fecha_nacimiento,(SELECT cliente_id FROM veterinario.cliente  WHERE email=@email))", conexion);
+                   "SET foreign_key_checks=0;INSERT INTO veterinario.mascota(mascota_id,nombre, especie,raza,sexo,fecha_nacimiento,propietario)" +
+                   "VALUES(NULL,@nombre,@especie, @raza, @sexo, @fecha_nacimiento,(SELECT cliente_id FROM veterinario.cliente  WHERE email=@email))", conexion);
                 consulta.Parameters.AddWithValue("@nombre", nombre);
+                consulta.Parameters.AddWithValue("@especie", especie);
                 consulta.Parameters.AddWithValue("@raza", raza);
                 consulta.Parameters.AddWithValue("@sexo", sexo);
                 consulta.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
@@ -131,23 +132,26 @@ namespace EasyVet
             }
 
         }
-        public String buscoMascota(String nombre,String raza, String email,String especie,String sexo,String telefono)
+        public DataTable buscoMascota(String nombre,String raza, String email,String especie,String sexo,String telefono)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascota,cliente WHERE mascota.propietario=cliente.cliente_id AND" +
-                    "(mascota.nombre=@nombre OR mascota.raza=@raza OR mascota.sexo=@sexo OR mascota.especie=@especie OR cliente.email=@email OR cliente.telefono=@telefono) ");
+                    "(mascota.nombre=@nombre OR mascota.raza=@raza OR mascota.sexo=@sexo OR mascota.especie=@especie OR cliente.email=@email OR cliente.telefono=@telefono)",conexion);
                 consulta.Parameters.AddWithValue("@nombre", nombre);
                 consulta.Parameters.AddWithValue("@raza", raza);
                 consulta.Parameters.AddWithValue("@email", email);
                 consulta.Parameters.AddWithValue("@especie", especie);
                 consulta.Parameters.AddWithValue("@sexo", sexo);
                 consulta.Parameters.AddWithValue("@telefono", telefono);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable busquedaPerro = new DataTable();
+                busquedaPerro.Load(resultado);
 
                 conexion.Close();
 
-                return consulta.ToString();
+                return busquedaPerro;
             }
             catch(Exception e)
             {
