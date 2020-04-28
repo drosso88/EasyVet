@@ -15,7 +15,7 @@ namespace EasyVet
         public Conexion()
         {
 
-            conexion = new MySqlConnection("Server=192.168.182.154; Database=veterinario; Uid=root; Pwd=; port=3306");
+            conexion = new MySqlConnection("Server=192.168.182.160; Database=veterinario; Uid=root; Pwd=; port=3306");
 
 
         }
@@ -25,14 +25,14 @@ namespace EasyVet
             try
             {
                 conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT *FROM veterinario.empleado WHERE usuario= @usuario and contrasena=@contrasena", conexion);
+                MySqlCommand consulta = new MySqlCommand("SELECT *FROM veterinario.empleado WHERE usuario= @usuario", conexion);
 
                 consulta.Parameters.AddWithValue("@usuario", usuario);
-                consulta.Parameters.AddWithValue("@contrasena", contrasena);
-
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 if (resultado.Read())
                 {
+                    String contrasenaObtenida = resultado.GetString("contrasena");
+                    bool correcta = BCrypt.Net.BCrypt.Verify(contrasena, contrasenaObtenida);
                     return resultado.GetString(0);
                 }
 
@@ -78,13 +78,13 @@ namespace EasyVet
             {
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand(
-                   "SET foreign_key_checks=0;INSERT INTO veterinario.mascota(mascota_id,nombre,raza,fecha_nacimiento,propietario)" +
-                   "VALUES(NULL, @nombre, @raza, @sexo, @fecha_nacimiento,(SELECT cliente_id FROM veterinario.cliente  WHERE email=@email))", conexion);
-                consulta.Parameters.AddWithValue("@email", email);
+                   "SET foreign_key_checks=0;INSERT INTO veterinario.mascota(mascota_id,nombre,raza,sexo,fecha_nacimiento,propietario)" +
+                   "VALUES(NULL,@nombre, @raza, @sexo, @fecha_nacimiento,(SELECT cliente_id FROM veterinario.cliente  WHERE email=@email))", conexion);
                 consulta.Parameters.AddWithValue("@nombre", nombre);
                 consulta.Parameters.AddWithValue("@raza", raza);
                 consulta.Parameters.AddWithValue("@sexo", sexo);
                 consulta.Parameters.AddWithValue("@fecha_nacimiento", fecha_nacimiento);
+                consulta.Parameters.AddWithValue("@email", email);
                 consulta.ExecuteNonQuery();
 
                 conexion.Close();
@@ -130,6 +130,29 @@ namespace EasyVet
                 throw e;
             }
 
+        }
+        public String buscoMascota(String nombre,String raza, String email,String especie,String sexo,String telefono)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascota,cliente WHERE mascota.propietario=cliente.cliente_id AND" +
+                    "(mascota.nombre=@nombre OR mascota.raza=@raza OR mascota.sexo=@sexo OR mascota.especie=@especie OR cliente.email=@email OR cliente.telefono=@telefono) ");
+                consulta.Parameters.AddWithValue("@nombre", nombre);
+                consulta.Parameters.AddWithValue("@raza", raza);
+                consulta.Parameters.AddWithValue("@email", email);
+                consulta.Parameters.AddWithValue("@especie", especie);
+                consulta.Parameters.AddWithValue("@sexo", sexo);
+                consulta.Parameters.AddWithValue("@telefono", telefono);
+
+                conexion.Close();
+
+                return consulta.ToString();
+            }
+            catch(Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

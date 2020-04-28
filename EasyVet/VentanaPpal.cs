@@ -78,7 +78,7 @@ namespace EasyVet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String resultado2 = miConexion.buscoMascotas(textBox12.Text,textBox13.Text,textBox14.Text,);
+            String resultado2 = miConexion.buscoMascota(textBox12.Text,textBox13.Text,textBox14.Text,comboBox3.Text,comboBox2.Text,textBox15.Text);
         }
     }
 }

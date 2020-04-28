@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace EasyVet
 {
@@ -25,7 +26,9 @@ namespace EasyVet
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String resultado = miConexion.insertoUsuario(dni.Text, nombre.Text, ap1.Text, textBox8.Text, cargo.Text, direccion.Text, telefono.Text, email.Text, cp.Text, nombre.Text + ap1.Text, contrasena.Text);
+            String textoHash = contrasena.Text;
+            String myHash = BCrypt.Net.BCrypt.HashPassword(textoHash, BCrypt.Net.BCrypt.GenerateSalt());
+            String resultado = miConexion.insertoUsuario(dni.Text, nombre.Text, ap1.Text, textBox8.Text, cargo.Text, direccion.Text, telefono.Text, email.Text, cp.Text, nombre.Text + ap1.Text,myHash);
             MessageBox.Show(resultado);
             this.Hide();
         }
