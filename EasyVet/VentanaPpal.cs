@@ -10,6 +10,8 @@ using System.Windows.Forms;
 
 namespace EasyVet
 {
+
+    //Interfaz y datos en BBDD por Rocio. Clases y Metodos por Igor
     
     public partial class VentanaPpal : Form
     {
