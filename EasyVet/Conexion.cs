@@ -12,10 +12,11 @@ namespace EasyVet
     {
         public MySqlConnection conexion;
 
+
         public Conexion()
         {
 
-            conexion = new MySqlConnection("Server=192.168.182.160; Database=veterinario; Uid=root; Pwd=; port=3306");
+            conexion = new MySqlConnection("Server=192.168.182.163; Database=veterinario; Uid=root; Pwd=; port=3306");
 
 
         }
@@ -33,7 +34,7 @@ namespace EasyVet
                 {
                     String contrasenaObtenida = resultado.GetString("contrasena");
                     bool correcta = BCrypt.Net.BCrypt.Verify(contrasena, contrasenaObtenida);
-                    return resultado.GetString(0);
+                    return resultado.GetString(1);
                 }
 
                 conexion.Close();
@@ -72,7 +73,7 @@ namespace EasyVet
 
         }
         //metodo para añadir Cliente. Por Rocio
-        public String insertoMascota(String nombre, String especie, String raza,String sexo, String fecha_nacimiento, String email)
+        public String insertoMascota(String nombre, String especie, String raza, String sexo, String fecha_nacimiento, String email)
         {
             try
             {
@@ -98,7 +99,7 @@ namespace EasyVet
         }
 
         //Rocio
-        public String insertoUsuario(String dni_trabajador,String nombre, String apellido_1, String apellido_2,String ocupacion,String direccion, String telefono, String email, String codigo_postal,  String usuario, String contrasena)
+        public String insertoUsuario(String dni_trabajador, String nombre, String apellido_1, String apellido_2, String ocupacion, String direccion, String telefono, String email, String codigo_postal, String usuario, String contrasena)
         {
             try
             {
@@ -119,7 +120,7 @@ namespace EasyVet
                 consulta.Parameters.AddWithValue("@email", email);
                 consulta.Parameters.AddWithValue("@usuario", usuario);
                 consulta.Parameters.AddWithValue("@contrasena", contrasena);
-               
+
 
                 consulta.ExecuteNonQuery();
                 conexion.Close();
@@ -132,13 +133,13 @@ namespace EasyVet
             }
 
         }
-        public DataTable buscoMascota(String nombre,String raza, String email,String especie,String sexo,String telefono)
+        public DataTable buscoMascota(String nombre, String raza, String email, String especie, String sexo, String telefono)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM mascota,cliente WHERE mascota.propietario=cliente.cliente_id AND" +
-                    "(mascota.nombre=@nombre OR mascota.raza=@raza OR mascota.sexo=@sexo OR mascota.especie=@especie OR cliente.email=@email OR cliente.telefono=@telefono)",conexion);
+                    "(mascota.nombre=@nombre OR mascota.raza=@raza OR mascota.sexo=@sexo OR mascota.especie=@especie OR cliente.email=@email OR cliente.telefono=@telefono)", conexion);
                 consulta.Parameters.AddWithValue("@nombre", nombre);
                 consulta.Parameters.AddWithValue("@raza", raza);
                 consulta.Parameters.AddWithValue("@email", email);
@@ -152,6 +153,62 @@ namespace EasyVet
                 conexion.Close();
 
                 return busquedaPerro;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public DataTable dameProfesional(int num)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT nombre,apellido_1 FROM empleado where empleado_id=@num", conexion);
+                consulta.Parameters.AddWithValue("@num", num);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable empleado = new DataTable();
+                empleado.Load(resultado);
+                conexion.Close();
+                return empleado;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+        public string longitud()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT MAX(empleado_id) AS id FROM empleado;", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                resultado.Read();
+                conexion.Close();
+                Console.WriteLine(resultado.GetInt32(0).ToString());
+                return resultado.GetInt32(0).ToString();
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+        }
+
+        public DataTable dameCategorias(String categoria)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM tienda WHERE categoria=@categoria", conexion);
+                consulta.Parameters.AddWithValue("@categoria", categoria);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable tienda_seleccionada = new DataTable();
+                tienda_seleccionada.Load(resultado);
+                conexion.Close();
+                return tienda_seleccionada;
             }
             catch(Exception e)
             {
