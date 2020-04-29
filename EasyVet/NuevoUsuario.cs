@@ -11,6 +11,7 @@ using BCrypt.Net;
 
 namespace EasyVet
 {
+    //Interfaz por Rocio
     public partial class NuevoUsuario : Form
     {
         Conexion miConexion = new Conexion();
@@ -23,7 +24,7 @@ namespace EasyVet
         {
             
         }
-
+        //Igor
         private void button1_Click(object sender, EventArgs e)
         {
             String textoHash = contrasena.Text;

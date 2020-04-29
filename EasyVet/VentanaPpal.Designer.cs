@@ -105,8 +105,18 @@
             this.checkBox6 = new System.Windows.Forms.CheckBox();
             this.checkBox5 = new System.Windows.Forms.CheckBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.comboBox7 = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.comboBox9 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.Agenda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.Mascotas.SuspendLayout();
             this.tabPage5.SuspendLayout();
@@ -119,6 +129,7 @@
             this.Menu.SuspendLayout();
             this.Tienda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // imageList1
@@ -253,24 +264,31 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.pictureBox1);
+            this.tabPage3.Controls.Add(this.label24);
+            this.tabPage3.Controls.Add(this.comboBox9);
             this.tabPage3.ImageIndex = 8;
             this.tabPage3.Location = new System.Drawing.Point(4, 67);
             this.tabPage3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage3.Size = new System.Drawing.Size(1073, 719);
+            this.tabPage3.Size = new System.Drawing.Size(1154, 804);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Peluqueria y estética";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label23);
+            this.tabPage2.Controls.Add(this.comboBox8);
+            this.tabPage2.Controls.Add(this.label22);
+            this.tabPage2.Controls.Add(this.comboBox7);
             this.tabPage2.ImageKey = "diagnostico.png";
             this.tabPage2.Location = new System.Drawing.Point(4, 67);
             this.tabPage2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tabPage2.Size = new System.Drawing.Size(1073, 719);
+            this.tabPage2.Size = new System.Drawing.Size(1154, 804);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Servicios diagnósticos";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -811,7 +829,7 @@
             this.Menu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Menu.Name = "Menu";
             this.Menu.SelectedIndex = 0;
-            this.Menu.Size = new System.Drawing.Size(1081, 790);
+            this.Menu.Size = new System.Drawing.Size(1162, 875);
             this.Menu.TabIndex = 0;
             // 
             // Tienda
@@ -1034,6 +1052,100 @@
             this.dataGridView3.Size = new System.Drawing.Size(1040, 340);
             this.dataGridView3.TabIndex = 26;
             // 
+            // comboBox7
+            // 
+            this.comboBox7.FormattingEnabled = true;
+            this.comboBox7.Items.AddRange(new object[] {
+            "Análisis",
+            "Consultas",
+            "Diagnóstico por Imagen",
+            "Eutanasia",
+            "Radiografía Estudio",
+            "Radiografía Individual",
+            "Urgencias",
+            "Vacuna Rabia",
+            "Vacuna Octavalente",
+            "Vacuna Puppy"});
+            this.comboBox7.Location = new System.Drawing.Point(80, 148);
+            this.comboBox7.Name = "comboBox7";
+            this.comboBox7.Size = new System.Drawing.Size(325, 28);
+            this.comboBox7.TabIndex = 0;
+            // 
+            // label22
+            // 
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(74, 77);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(331, 36);
+            this.label22.TabIndex = 1;
+            this.label22.Text = "Servicios Veterinarios";
+            // 
+            // label23
+            // 
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(558, 77);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(331, 36);
+            this.label23.TabIndex = 3;
+            this.label23.Text = "Cirujias";
+            // 
+            // comboBox8
+            // 
+            this.comboBox8.FormattingEnabled = true;
+            this.comboBox8.Items.AddRange(new object[] {
+            "Esterilización",
+            "Estirpación de Quistes",
+            "Reconstrucciones",
+            "Extracciones",
+            "Urgencias",
+            "Hospitalización"});
+            this.comboBox8.Location = new System.Drawing.Point(564, 148);
+            this.comboBox8.Name = "comboBox8";
+            this.comboBox8.Size = new System.Drawing.Size(325, 28);
+            this.comboBox8.TabIndex = 2;
+            // 
+            // label24
+            // 
+            this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(73, 77);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(331, 36);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "PELUQUERÍA";
+            // 
+            // comboBox9
+            // 
+            this.comboBox9.FormattingEnabled = true;
+            this.comboBox9.Items.AddRange(new object[] {
+            "Lavado agua ozonizada",
+            "STRIPPING",
+            "BLENDING",
+            "CARDIN",
+            "FLATWORK",
+            "Dermatología",
+            "nudos y cepillado"});
+            this.comboBox9.Location = new System.Drawing.Point(79, 148);
+            this.comboBox9.Name = "comboBox9";
+            this.comboBox9.Size = new System.Drawing.Size(325, 28);
+            this.comboBox9.TabIndex = 4;
+            this.comboBox9.Text = "PELUQUERÍA";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(410, 19);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(725, 780);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
             // VentanaPpal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -1051,6 +1163,8 @@
             this.Agenda.ResumeLayout(false);
             this.Agenda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.Mascotas.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
@@ -1067,6 +1181,7 @@
             this.Tienda.ResumeLayout(false);
             this.Tienda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1147,5 +1262,13 @@
         private System.Windows.Forms.CheckBox checkBox6;
         private System.Windows.Forms.CheckBox checkBox5;
         private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.ComboBox comboBox7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.ComboBox comboBox9;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

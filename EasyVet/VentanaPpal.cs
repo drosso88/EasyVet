@@ -28,6 +28,8 @@ namespace EasyVet
                 comboBox5.Items.Add(empleado["nombre"].ToString() + " " + empleado["apellido_1"].ToString());
             }
         }
+
+        //tienda
         public String elijoCategoria()
         {
            
@@ -125,7 +127,8 @@ namespace EasyVet
             Perfil perfil = new Perfil();
             perfil.Show();
         }
-
+         
+        //Rocio
         private void button5_Click(object sender, EventArgs e)
         {
             String resultado = miConexion.insertoCliente(textBox1.Text, textBox2.Text, textBox16.Text, textBox4.Text, textBox3.Text);

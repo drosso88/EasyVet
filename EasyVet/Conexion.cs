@@ -133,6 +133,7 @@ namespace EasyVet
             }
 
         }
+        //metodo que bisca mascotas filtrando, Igor
         public DataTable buscoMascota(String nombre, String raza, String email, String especie, String sexo, String telefono)
         {
             try
