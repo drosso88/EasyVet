@@ -22,18 +22,15 @@ namespace EasyVet
         public VentanaPpal()
         {
             InitializeComponent();
-            int i = 1;
-        
-            while (i <6 )
+            empleados = miConexion.dameTodo();
+            foreach (DataRow empleado in empleados.Rows)
             {
-                empleados = miConexion.dameProfesional(i);
-                comboBox5.Items.Add(empleados.Rows[0]["nombre"].ToString() + " " + empleados.Rows[0]["apellido_1"].ToString());
-                i++;
+                comboBox5.Items.Add(empleado["nombre"].ToString() + " " + empleado["apellido_1"].ToString());
             }
         }
         public String elijoCategoria()
         {
-            int variable = 0;
+           
             String resultado = "";
                 if(checkBox5.Checked)
             {

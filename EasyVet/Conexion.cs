@@ -16,7 +16,7 @@ namespace EasyVet
         public Conexion()
         {
 
-            conexion = new MySqlConnection("Server=192.168.182.163; Database=veterinario; Uid=root; Pwd=; port=3306");
+            conexion = new MySqlConnection("Server=192.168.182.164; Database=veterinario; Uid=root; Pwd=; port=3306");
 
 
         }
@@ -211,6 +211,23 @@ namespace EasyVet
                 return tienda_seleccionada;
             }
             catch(Exception e)
+            {
+                throw e;
+            }
+        }
+        public DataTable dameTodo()
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta = new MySqlCommand("SELECT * FROM empleado", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable todo = new DataTable();
+                todo.Load(resultado);
+                conexion.Close();
+                return todo;
+            }
+            catch (Exception e)
             {
                 throw e;
             }
