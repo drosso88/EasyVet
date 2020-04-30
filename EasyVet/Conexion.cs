@@ -16,7 +16,7 @@ namespace EasyVet
         public Conexion()
         {
 
-            conexion = new MySqlConnection("Server=192.168.182.164; Database=veterinario; Uid=root; Pwd=; port=3306");
+            conexion = new MySqlConnection("Server=192.168.182.167; Database=veterinario; Uid=root; Pwd=; port=3306");
 
 
         }
@@ -179,24 +179,7 @@ namespace EasyVet
                 throw e;
             }
         }
-        public string longitud()
-        {
-            try
-            {
-                conexion.Open();
-                MySqlCommand consulta = new MySqlCommand("SELECT MAX(empleado_id) AS id FROM empleado;", conexion);
-                MySqlDataReader resultado = consulta.ExecuteReader();
-                resultado.Read();
-                conexion.Close();
-                Console.WriteLine(resultado.GetInt32(0).ToString());
-                return resultado.GetInt32(0).ToString();
-            }
-            catch (Exception e)
-            {
-                throw e;
-            }
-
-        }
+       
 
         public DataTable dameCategorias(String categoria)
         {
@@ -205,8 +188,8 @@ namespace EasyVet
                 conexion.Open();
                 MySqlCommand consulta = new MySqlCommand("SELECT * FROM tienda WHERE categoria=@categoria", conexion);
                 consulta.Parameters.AddWithValue("@categoria", categoria);
-                MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable tienda_seleccionada = new DataTable();
+                MySqlDataReader resultado = consulta.ExecuteReader();
                 tienda_seleccionada.Load(resultado);
                 conexion.Close();
                 return tienda_seleccionada;
@@ -232,6 +215,38 @@ namespace EasyVet
             {
                 throw e;
             }
+        }
+
+        public String pidoCita(String nombre_empleado,String apellido, String email,String nombre,String fecha)
+        {
+            try
+            {
+                conexion.Open();
+
+                MySqlCommand consulta =
+                    new MySqlCommand("SET foreign_key_checks=0;INSERT INTO veterinario.cita(cita_id,cod_empleado,cod_cliente,cod_mascota,fecha) VALUES" +
+                    "(NULL,(SELECT empleado_id FROM veterinario.empleado  WHERE nombre  like @nombre_empleado and apellido_1 like @apellido)," +
+                    "(SELECT cliente_id FROM veterinario.cliente  WHERE email like @email)," +
+                    "(SELECT mascota_id FROM mascota,cliente where mascota.propietario=cliente.cliente_id and cliente.email like @email),@fecha)", conexion);
+                consulta.Parameters.AddWithValue("@nombre_empleado", nombre_empleado);
+                consulta.Parameters.AddWithValue("@apellido", apellido);
+                consulta.Parameters.AddWithValue("@email", email);
+                consulta.Parameters.AddWithValue("@nombre", nombre);
+                consulta.Parameters.AddWithValue("@fecha", fecha);
+
+
+                consulta.ExecuteNonQuery();
+                conexion.Close();
+
+                return "la cita concertada";
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+
+
+           
         }
     }
 }

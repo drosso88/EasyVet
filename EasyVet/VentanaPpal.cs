@@ -1,32 +1,66 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyVet
 {
 
     //Interfaz y datos en BBDD por Rocio. Clases y Metodos por Igor
-    
+
     public partial class VentanaPpal : Form
     {
         Conexion miConexion = new Conexion();
         DataTable busquedaPerro = new DataTable();
         DataTable empleados = new DataTable();
-        bool hola = false;
+        
+        
         public VentanaPpal()
         {
             InitializeComponent();
+            dameTiempo();
             empleados = miConexion.dameTodo();
             foreach (DataRow empleado in empleados.Rows)
             {
                 comboBox5.Items.Add(empleado["nombre"].ToString() + " " + empleado["apellido_1"].ToString());
             }
+        }
+        public String dameTiempo()
+        {
+            String fecha = monthCalendar1.ToString();
+            fecha = fecha.Substring(58, 11);
+            String miFecha = "";
+
+            miFecha = fecha.Substring(7, 4) + "-" + fecha.Substring(4, 2) + "-" + fecha.Substring(1, 2) + " ";
+            miFecha += comboBox6.Text;
+            Console.WriteLine("longitud" + miFecha);
+
+            return miFecha;
+
+        }
+
+        public String dameNombreEmpleado()
+        {
+            String nombre = comboBox5.Text;
+            int espacio = nombre.IndexOf(' ');
+            if (nombre.Length > 0)
+            {
+                String dameNombre = nombre.Substring(0, espacio);
+
+                return dameNombre;
+            }
+            return "no has seleccionado veterinario";
+        }
+        public String dameApellidoEmpleado()
+        {
+            String nombre = comboBox5.Text;
+            int espacio = nombre.IndexOf(' ');
+            if (nombre.Length > 0)
+            {
+                String dameApellido = nombre.Substring(espacio + 1);
+
+                return dameApellido;
+            }
+            return "No has seleccionado veterinario";
         }
 
         //tienda
@@ -133,7 +167,8 @@ namespace EasyVet
         {
             String resultado = miConexion.insertoCliente(textBox1.Text, textBox2.Text, textBox16.Text, textBox4.Text, textBox3.Text);
             String resultado1 = miConexion.insertoMascota(textBox7.Text, comboBox4.Text, textBox9.Text, comboBox1.Text, textBox11.Text,textBox3.Text);
-           // MessageBox.Show( resultado1);
+            Agenda.Show();
+            MessageBox.Show( "mascota y propietario añadidos");
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -142,15 +177,17 @@ namespace EasyVet
         }
 
         private void button1_Click(object sender, EventArgs e)
+
+        //Igor// al pulsar el extendible se manda una solicitud a la base de datos para seleccionar todos los 
+        //profesionales de la empresa , con lo que en teorio este combobox se rellenar con la info de la bbdd
+        //(pero en teoria hasta cerdos vuelan)
         {
             dataGridView1.DataSource = miConexion.buscoMascota(textBox12.Text,textBox13.Text,textBox14.Text,comboBox3.Text,comboBox2.Text,textBox15.Text);
         }
 
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //Igor// al pulsar el extendible se manda una solicitud a la base de datos para seleccionar todos los 
-            //profesionales de la empresa , con lo que en teorio este combobox se rellenar con la info de la bbdd
-            //(pero en teoria hasta cerdos vuelan)
+            
         }
 
         private void comboBox5_Click(object sender, EventArgs e)
@@ -161,7 +198,18 @@ namespace EasyVet
 
         private void button3_Click(object sender, EventArgs e)
         {
+           
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
             dataGridView3.DataSource = miConexion.dameCategorias(elijoCategoria());
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine((dameNombreEmpleado(), dameApellidoEmpleado(), textBox3.Text, dameTiempo()));
+            String resultado = miConexion.pidoCita(dameNombreEmpleado(),dameApellidoEmpleado(), textBox3.Text, textBox7.Text, dameTiempo());
         }
     }
 }
