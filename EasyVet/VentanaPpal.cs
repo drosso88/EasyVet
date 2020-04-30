@@ -2,6 +2,7 @@
 using System.Data;
 using System.Windows.Forms;
 
+
 namespace EasyVet
 {
 
@@ -12,7 +13,7 @@ namespace EasyVet
         Conexion miConexion = new Conexion();
         DataTable busquedaPerro = new DataTable();
         DataTable empleados = new DataTable();
-        
+        Login miLogin = new Login();
         
         public VentanaPpal()
         {
@@ -24,6 +25,10 @@ namespace EasyVet
                 comboBox5.Items.Add(empleado["nombre"].ToString() + " " + empleado["apellido_1"].ToString());
             }
         }
+      
+        
+       
+
         public String dameTiempo()
         {
             String fecha = monthCalendar1.ToString();
@@ -208,8 +213,12 @@ namespace EasyVet
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Console.WriteLine((dameNombreEmpleado(), dameApellidoEmpleado(), textBox3.Text, dameTiempo()));
-            String resultado = miConexion.pidoCita(dameNombreEmpleado(),dameApellidoEmpleado(), textBox3.Text, textBox7.Text, dameTiempo());
+          
+            //String resultado = miConexion.pidoCita(dameNombreEmpleado(),dameApellidoEmpleado(), textBox3.Text, textBox7.Text, dameTiempo());
+            //MessageBox.Show(resultado);
+           
+
+
         }
     }
 }

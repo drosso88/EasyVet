@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,27 +17,31 @@ namespace EasyVet
 
         Conexion miConexion = new Conexion();
         DataTable empleados = new DataTable();
-       
-        
+
         public Login()
         {
             InitializeComponent();
+
         }
+       
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+           
             String resultado = miConexion.comprueboUsuario(textBox1.Text, textBox2.Text);
-            MessageBox.Show(resultado);
+            
+           MessageBox.Show(resultado);
             if (resultado != "error de usuario/contraseña")
             {
+               
                 this.Hide();
                 VentanaPpal ventana = new VentanaPpal();
                 ventana.Show();
-            }
-            
-        }
 
+            }
+        
+        }
+     
         private void Login_Load(object sender, EventArgs e)
         {
 

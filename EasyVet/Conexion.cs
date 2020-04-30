@@ -12,7 +12,7 @@ namespace EasyVet
     {
         public MySqlConnection conexion;
 
-
+        bool correcta = false;
         public Conexion()
         {
 
@@ -30,11 +30,16 @@ namespace EasyVet
 
                 consulta.Parameters.AddWithValue("@usuario", usuario);
                 MySqlDataReader resultado = consulta.ExecuteReader();
+                
+                
                 if (resultado.Read())
                 {
                     String contrasenaObtenida = resultado.GetString("contrasena");
-                    bool correcta = BCrypt.Net.BCrypt.Verify(contrasena, contrasenaObtenida);
-                    return resultado.GetString(1);
+                    correcta = BCrypt.Net.BCrypt.Verify(contrasena, contrasenaObtenida);
+                    if (correcta)
+                    {
+                        return resultado.GetString(0);
+                    }
                 }
 
                 conexion.Close();
