@@ -27,7 +27,7 @@ namespace EasyVet
         }
       
         
-       
+       // IGOR: metodo que guarda el día y hora de la cita
 
         public String dameTiempo()
         {
@@ -68,7 +68,7 @@ namespace EasyVet
             return "No has seleccionado veterinario";
         }
 
-        //tienda
+        //IGOR tienda
         public String elijoCategoria()
         {
            

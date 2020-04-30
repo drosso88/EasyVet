@@ -165,7 +165,7 @@ namespace EasyVet
                 throw e;
             }
         }
-
+        //metodo hecho por igor 
         public DataTable dameProfesional(int num)
         {
             try
